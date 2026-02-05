@@ -1,4 +1,4 @@
-# 🍯 Agentic Scam Honeypot - GUVI Hackathon
+#  Agentic Scam Honeypot - GUVI Hackathon
 
 An AI-powered honeypot system featuring **Sara** - a natural-sounding Indian woman who engages with scammers, extracts intelligence, and sounds completely authentic.
 
@@ -14,7 +14,7 @@ Sara is NOT a robot. She's a 40-50 year old Indian school teacher who:
 **Example Conversation:**
 ```
 📞 Scammer: "Madam, aapka account block hone wala hai"
-👩 Sara: "Kya? Kaunsa account? Main confused hoon"
+👩 Sara: "Kya? Konsa account? Main confused hoon"
 📞 Scammer: "State Bank account. KYC pending hai"
 👩 Sara: "Achha... toh kya karna hoga?"
 ```
@@ -23,7 +23,7 @@ Sara is NOT a robot. She's a 40-50 year old Indian school teacher who:
 
 ---
 
-## 🎯 Features
+##  Features
 
 ✅ **Intelligent Scam Detection** - Multi-pattern analysis with confidence scoring
 ✅ **Sara - AI Agent** - Natural Indian persona that sounds completely real
@@ -35,7 +35,7 @@ Sara is NOT a robot. She's a 40-50 year old Indian school teacher who:
 ✅ **REST API** - Easy integration with FastAPI
 ✅ **Secure Authentication** - API key protection
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐
@@ -63,151 +63,6 @@ Sara is NOT a robot. She's a 40-50 year old Indian school teacher who:
 ┌─────────────────┐
 │ Send to GUVI    │ ◄── Final callback when done
 └─────────────────┘
-```
-
-## 🔑 API Key
-
-**Your API Key:** `HONEY-POT-SECURE-KEY-2024-GUVI-HACK`
-
-Include this in the `x-api-key` header for all requests.
-
-## 📦 Installation
-
-### Method 1: Local Setup
-
-```bash
-# Clone/navigate to project directory
-cd scam-honeypot-agent
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set your Anthropic API key
-export ANTHROPIC_API_KEY="your-api-key-here"
-
-# Run the server
-python main.py
-```
-
-### Method 2: Docker Setup
-
-```bash
-# Build and run with Docker Compose
-docker-compose up -d
-
-# Check logs
-docker-compose logs -f
-```
-
-### Method 3: Manual Docker
-
-```bash
-# Build image
-docker build -t scam-honeypot-agent .
-
-# Run container
-docker run -d \
-  -p 8000:8000 \
-  -e ANTHROPIC_API_KEY="your-api-key-here" \
-  --name honeypot \
-  scam-honeypot-agent
-```
-
-## 🚀 API Endpoints
-
-### 1. Health Check
-```bash
-GET /health
-```
-
-### 2. Root Information
-```bash
-GET /
-```
-
-### 3. Detect & Respond (Main Endpoint)
-```bash
-POST /api/detect
-Headers:
-  x-api-key: HONEY-POT-SECURE-KEY-2024-GUVI-HACK
-  Content-Type: application/json
-
-Body:
-{
-  "sessionId": "unique-session-id",
-  "message": {
-    "sender": "scammer",
-    "text": "Your bank account will be blocked today. Verify immediately.",
-    "timestamp": 1770005528731
-  },
-  "conversationHistory": [],
-  "metadata": {
-    "channel": "SMS",
-    "language": "English",
-    "locale": "IN"
-  }
-}
-
-Response:
-{
-  "status": "success",
-  "reply": "Why will my account be blocked?"
-}
-```
-
-### 4. Get Session Information
-```bash
-GET /api/session/{session_id}
-Headers:
-  x-api-key: HONEY-POT-SECURE-KEY-2024-GUVI-HACK
-```
-
-### 5. Manual Session End
-```bash
-POST /api/manual-end/{session_id}
-Headers:
-  x-api-key: HONEY-POT-SECURE-KEY-2024-GUVI-HACK
-```
-
-## 🧪 Testing
-
-Run the test suite:
-
-```bash
-python test_api.py
-```
-
-This will:
-1. Check health endpoint
-2. Simulate a scam conversation
-3. Test legitimate messages
-4. Trigger manual session end
-5. Display extracted intelligence
-
-## 📝 Example Usage
-
-### cURL Example
-
-```bash
-curl -X POST http://localhost:8000/api/detect \
-  -H "x-api-key: HONEY-POT-SECURE-KEY-2024-GUVI-HACK" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "sessionId": "test-123",
-    "message": {
-      "sender": "scammer",
-      "text": "Your account is blocked. Call +919876543210 immediately",
-      "timestamp": 1770005528731
-    },
-    "conversationHistory": [],
-    "metadata": {
-      "channel": "SMS",
-      "language": "English",
-      "locale": "IN"
-    }
-  }'
-```
-
 ### Python Example
 
 ```python
@@ -238,7 +93,7 @@ response = requests.post(url, json=payload, headers=headers)
 print(response.json())
 ```
 
-## 🎭 How It Works
+##  How It Works
 
 ### 1. Scam Detection
 The system uses multiple pattern categories:
@@ -269,17 +124,9 @@ Automatically extracts:
 After sufficient engagement (10+ messages or critical info gathered), the system automatically sends results to:
 ```
 POST https://hackathon.guvi.in/api/updateHoneyPotFinalResult
-```
 
-## 🔒 Security Features
 
-- API Key authentication on all endpoints
-- No personal data storage (session-based only)
-- Rate limiting ready
-- Secure environment variable handling
-- Docker containerization
-
-## 📊 Evaluation Criteria Coverage
+##  Evaluation Criteria Coverage
 
 ✅ **Scam Detection Accuracy**: Multi-pattern analysis with confidence scoring
 ✅ **Quality of Agentic Engagement**: Claude AI generates contextual responses
@@ -287,37 +134,10 @@ POST https://hackathon.guvi.in/api/updateHoneyPotFinalResult
 ✅ **API Stability**: FastAPI with error handling and logging
 ✅ **Ethical Behavior**: No impersonation, no illegal instructions, responsible engagement
 
-## 🌐 Deployment
 
-### Deploy to Cloud (Railway/Render/Heroku)
 
-1. Push code to GitHub
-2. Connect to your cloud platform
-3. Set environment variable: `ANTHROPIC_API_KEY`
-4. Deploy!
 
-### Ngrok for Local Testing
-
-```bash
-# Run server locally
-python main.py
-
-# In another terminal
-ngrok http 8000
-```
-
-Use the ngrok URL as your public endpoint.
-
-## 📋 Environment Variables
-
-```bash
-ANTHROPIC_API_KEY=your-anthropic-api-key
-API_KEY=HONEY-POT-SECURE-KEY-2024-GUVI-HACK
-PORT=8000
-HOST=0.0.0.0
-```
-
-## 🤝 Scam Categories Detected
+##  Scam Categories Detected
 
 1. **Bank Fraud** - Account blocking threats
 2. **UPI Fraud** - Payment redirection scams
@@ -327,21 +147,5 @@ HOST=0.0.0.0
 6. **Authority Impersonation** - Fake government/bank officials
 7. **Urgency Tactics** - Time pressure scams
 
-## 📞 Support
 
-For issues or questions:
-- Check logs: `docker-compose logs -f`
-- Test with: `python test_api.py`
-- Verify health: `curl http://localhost:8000/health`
 
-## 📄 License
-
-Created for GUVI Hackathon 2024
-
----
-
-**API Key:** `HONEY-POT-SECURE-KEY-2024-GUVI-HACK`
-
-**Endpoint:** `http://your-server:8000/api/detect`
-
-**Status:** ✅ Production Ready
