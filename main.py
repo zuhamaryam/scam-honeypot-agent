@@ -26,6 +26,39 @@ app = FastAPI(
     description="AI-powered system for scam detection and intelligence extraction",
     version="1.0.0"
 )
+from fastapi import FastAPI, Header
+from pydantic import BaseModel
+from typing import Optional
+import base64
+
+app = FastAPI()
+
+# Existing honeypot model (already hai to change mat karo)
+class AudioTestRequest(BaseModel):
+    language: str
+    audioFormat: str
+    audioBase64: str
+
+
+@app.post("/api/test-audio")
+async def test_audio(
+    data: AudioTestRequest,
+    x_api_key: Optional[str] = Header(None)
+):
+    try:
+        # dummy decode check
+        base64.b64decode(data.audioBase64)
+
+        return {
+            "status": "success",
+            "message": "Audio received successfully",
+            "language": data.language,
+            "format": data.audioFormat
+        }
+
+    except Exception:
+        return {"status": "error", "message": "Invalid audio"}
+
 
 # API Key for authentication
 API_KEY = "HONEY-POT-SECURE-KEY-2024-GUVI-HACK"
