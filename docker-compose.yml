@@ -1,20 +1,19 @@
-version: '3.8'
+version: "3.8"
 
 services:
   honeypot-api:
     build: .
-    container_name: scam-honeypot-agent
+    container_name: honeypot-agent
     ports:
-      - "8000:8000"
+      - "3000:3000"
+
     environment:
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      - API_KEY=HONEY-POT-SECURE-KEY-2024-GUVI-HACK
+      - API_KEY=HONEY-POT-SECURE-KEY
+
     restart: unless-stopped
-    volumes:
-      - ./logs:/app/logs
+
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 40s
