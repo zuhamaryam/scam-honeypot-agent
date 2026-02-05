@@ -118,3 +118,50 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
+from fastapi import FastAPI, File, UploadFile, HTTPException, Header
+from typing import Optional
+import os
+
+app = FastAPI()
+
+# API Key for authentication
+API_KEY = "HONEY-POT-SECURE-KEY-2024-GUVI-HACK"
+
+# Folder to temporarily save uploaded audio (optional)
+UPLOAD_FOLDER = "uploaded_audios"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+@app.post("/api/upload-audio")
+async def upload_audio(
+    sessionId: str,
+    language: str,
+    audioFile: UploadFile = File(...),
+    x_api_key: Optional[str] = Header(None)
+):
+    # Authenticate API Key
+    if x_api_key != API_KEY:
+        raise HTTPException(status_code=401, detail="Invalid API Key")
+
+    # Check if uploaded file is audio
+    if not audioFile.content_type.startswith("audio/"):
+        raise HTTPException(status_code=400, detail="Uploaded file is not an audio file")
+
+    try:
+        # Save the uploaded file temporarily (optional)
+        file_location = os.path.join(UPLOAD_FOLDER, f"{sessionId}_{audioFile.filename}")
+        with open(file_location, "wb") as f:
+            f.write(await audioFile.read())
+
+        # You can now process this file with your AI or scam detection logic
+        return {
+            "status": "success",
+            "message": f"Audio received successfully: {audioFile.filename}",
+            "sessionId": sessionId,
+            "language": language,
+            "filePath": file_location
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to process audio: {str(e)}")
+
+
