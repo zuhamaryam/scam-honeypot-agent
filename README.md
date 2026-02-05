@@ -25,15 +25,15 @@ Sara is NOT a robot. She's a 40-50 year old Indian school teacher who:
 
 ##  Features
 
-✅ **Intelligent Scam Detection** - Multi-pattern analysis with confidence scoring
-✅ **Sara - AI Agent** - Natural Indian persona that sounds completely real
-✅ **Hinglish Conversations** - Natural Hindi-English mix like real Indians speak
-✅ **Intelligence Extraction** - Automatically extracts bank accounts, UPI IDs, phone numbers, links
-✅ **Multi-turn Conversations** - Maintains context across conversation history
-✅ **Human-like Behavior** - Confused, hesitant, with environmental context (school, network issues)
-✅ **Automatic Reporting** - Sends final intelligence to GUVI evaluation endpoint
-✅ **REST API** - Easy integration with FastAPI
-✅ **Secure Authentication** - API key protection
+ **Intelligent Scam Detection** - Multi-pattern analysis with confidence scoring
+ **Sara - AI Agent** - Natural Indian persona that sounds completely real
+ **Hinglish Conversations** - Natural Hindi-English mix like real Indians speak
+ **Intelligence Extraction** - Automatically extracts bank accounts, UPI IDs, phone numbers, links
+ **Multi-turn Conversations** - Maintains context across conversation history
+ **Human-like Behavior** - Confused, hesitant, with environmental context (school, network issues)
+ **Automatic Reporting** - Sends final intelligence to GUVI evaluation endpoint
+ **REST API** - Easy integration with FastAPI
+ **Secure Authentication** - API key protection
 
 ## Architecture
 
@@ -128,11 +128,11 @@ POST https://hackathon.guvi.in/api/updateHoneyPotFinalResult
 
 ##  Evaluation Criteria Coverage
 
-✅ **Scam Detection Accuracy**: Multi-pattern analysis with confidence scoring
-✅ **Quality of Agentic Engagement**: Claude AI generates contextual responses
-✅ **Intelligence Extraction**: Regex-based extraction of all required data types
-✅ **API Stability**: FastAPI with error handling and logging
-✅ **Ethical Behavior**: No impersonation, no illegal instructions, responsible engagement
+ **Scam Detection Accuracy**: Multi-pattern analysis with confidence scoring
+ **Quality of Agentic Engagement**: Claude AI generates contextual responses
+ **Intelligence Extraction**: Regex-based extraction of all required data types
+ **API Stability**: FastAPI with error handling and logging
+ **Ethical Behavior**: No impersonation, no illegal instructions, responsible engagement
 
 
 
