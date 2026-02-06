@@ -26,25 +26,6 @@ app = FastAPI(
     description="AI-powered system for scam detection and intelligence extraction",
     version="1.0.0"
 )
-axios.post(API_URL, {
-  sessionId: "guvi-audio-test-001",
-  message: {
-    sender: "scammer",
-    text: null,
-    timestamp: Date.now(),
-    audio_base64: audioBase64,
-    audio_url: null
-  },
-  conversationHistory: [],
-  metadata: {
-    channel: "Phone",
-    language: "hindi",
-    locale: "IN"
-  }
-}, {
-  headers: { "Content-Type": "application/json" }
-});
-
 
 # API Key for authentication
 API_KEY = "HONEY-POT-SECURE-KEY-2024-GUVI-HACK"
