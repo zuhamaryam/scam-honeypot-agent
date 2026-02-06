@@ -1,0 +1,16 @@
+{
+  "sessionId": "guvi-audio-test-001",
+  "message": {
+    "sender": "scammer",
+    "text": null,
+    "timestamp": 1770374643174,
+    "audio_base64": "T2dnUwACAAAAAAAAAAAAAAAAAAAAACqCBoIBE09wdXNIZWFkAQFoAIA+AAAAAABPZ2dTAAAAAAAAAAAAAAAAAAABAAAAjzLsvAEYT3B1c1RhZ3MIAAAAV2hhdHNBcHAAAAAAT2dnUwAA6H4BAAAAAAAAAAAAAgAAAM7Z/UsaMtP27ufl5v8F/wX/QP8k/yj/E/j/GP8nxsOwe10aUEv5xu26Ys/mBaggGvIQ0ooK3A2ygWhTP59VY1Q1111Rze7WE+kLNE7Z09w4UhiB7148pj4jRg4CtS0xuWl0gUQnV0PZyc6xB",
+    "audio_url": null
+  },
+  "conversationHistory": [],
+  "metadata": {
+    "channel": "Phone",
+    "language": "hindi",
+    "locale": "IN"
+  }
+}
